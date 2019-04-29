@@ -107,3 +107,71 @@ values ('CUSTOMER_RISK_RATING_RBWM', 'CUSTOMER_RISK_RATING_RBWM', 'CANCELLATION_
 insert into TB_TABLEINFO_300 (FILE_NAME, TABLE_NAME, COLUMN_NAME, DATA_TYPE, DATA_LENGTH, COMMENTS, DATA_DIC, ORDNUM, TWO_SEVEN, IS_NOT_NULL, IS_NOT_PK, IS_ONLY)
 values ('CUSTOMER_RISK_RATING_RBWM', 'CUSTOMER_RISK_RATING_RBWM', 'TRIGGER_DESCRIPTION', null, null, null, null, 10, null, null, null, null);
 commit;
+
+comment on table import_file is '联网核查审核信息表';
+
+create table UPLOAD_FILE_300
+(
+  ID            VARCHAR2(32),
+  FILE_NAME     VARCHAR2(64),
+  DATA_NUM      NUMBER(8),
+  FILE_TIME     VARCHAR2(6),
+  UPLOAD_PERSON VARCHAR2(20),
+  UPLOAD_TIME   DATE,
+  CHECK_PERSON  VARCHAR2(20),
+  CHECK_TIME    DATE,
+  UPDATE_PERSON VARCHAR2(20),
+  UPDATE_TIME   DATE,
+  DEPARTMENT    VARCHAR2(20),
+  CHECK_STATUS  VARCHAR2(2),
+  CHECK_MESSAGE VARCHAR2(200),
+  TABLE_NAME    VARCHAR2(40),
+  AREA          VARCHAR2(20),
+  FILLER1       VARCHAR2(64),
+  FILLER2       VARCHAR2(64),
+  FILLER3       VARCHAR2(64)
+)
+comment on table UPLOAD_FILE_300 is '300号文审核信息表';
+-- Add comments to the columns 
+comment on column UPLOAD_FILE_300.ID
+  is '记录主键';
+comment on column UPLOAD_FILE_300.FILE_NAME
+  is '文件名';
+comment on column UPLOAD_FILE_300.DATA_NUM
+  is '数据量';
+comment on column UPLOAD_FILE_300.FILE_TIME
+  is '文件日期';
+comment on column UPLOAD_FILE_300.UPLOAD_PERSON
+  is '上传人';
+comment on column UPLOAD_FILE_300.UPLOAD_TIME
+  is '上传时间';
+comment on column UPLOAD_FILE_300.CHECK_PERSON
+  is '审核人';
+comment on column UPLOAD_FILE_300.CHECK_TIME
+  is '审核时间';
+comment on column UPLOAD_FILE_300.UPDATE_PERSON
+  is '更新人';
+comment on column UPLOAD_FILE_300.UPDATE_TIME
+  is '更新时间';
+comment on column UPLOAD_FILE_300.DEPARTMENT
+  is '部门';
+comment on column UPLOAD_FILE_300.CHECK_STATUS
+  is '审核状态';
+comment on column UPLOAD_FILE_300.CHECK_MESSAGE
+  is '审核信息';
+comment on column UPLOAD_FILE_300.TABLE_NAME
+  is '对应表名';
+comment on column UPLOAD_FILE_300.AREA
+  is '区域';
+comment on column UPLOAD_FILE_300.FILLER1
+  is '备用字段一';
+comment on column UPLOAD_FILE_300.FILLER2
+  is '备用字段二';
+comment on column UPLOAD_FILE_300.FILLER3
+  is '备用字段三';
+
+-----系统配置表
+insert into SYS_PARAMS (PARAMGROUP_ID, PARAM_ID, PARAM_VAL, PARAM_NAME, MEMO, ST, IS_LOCK, IS_DEL, CRT_DT, LAST_UPD_TMS, LAST_UPD_OPER)
+values ('DEPARTMENT', '300_PB', 'CUSTOMER_RISK_RATING_PB', 'PB部门上传文件', null, '4', 'F', 'F', null, null, null);
+insert into SYS_PARAMS (PARAMGROUP_ID, PARAM_ID, PARAM_VAL, PARAM_NAME, MEMO, ST, IS_LOCK, IS_DEL, CRT_DT, LAST_UPD_TMS, LAST_UPD_OPER)
+values ('DEPARTMENT', '300_RBWM', 'CUSTOMER_RISK_RATING_RBWM', 'RBWM部门上传文件', null, '4', 'F', 'F', null, null, null);
