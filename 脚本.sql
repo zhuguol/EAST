@@ -70,11 +70,11 @@ comment on column CUSTOMER_RISK_RATING_RBWM.TRIGGER_DESCRIPTION
   
 --菜单脚本
 insert into FUNCTION_INFO (FUNCID, FUNCNAME, PAGEPATH, LOCATION, ISDIRECTORY, LASTDIRECTORY, SHOWSEQ, FUNC_CLASS, FUNC_TYPE, WORKFLOW_FLAG, UP_FUNC_CODE, FUNC_DESC, STATUS, EFFECT_DATE, EXPIRE_DATE, TIMESTAMPS, MISCFLGS, MISC, ICON_CLS)
-values ('19', '300号文文件上传/审核', null, 2, 1, '0', 8, null, '0', null, null, null, '1', null, null, null, null, null, null);
+values ('19', 'Risk Rating上传/审核', null, 2, 1, '0', 8, null, '0', null, null, null, '1', null, null, null, null, null, null);
 insert into FUNCTION_INFO (FUNCID, FUNCNAME, PAGEPATH, LOCATION, ISDIRECTORY, LASTDIRECTORY, SHOWSEQ, FUNC_CLASS, FUNC_TYPE, WORKFLOW_FLAG, UP_FUNC_CODE, FUNC_DESC, STATUS, EFFECT_DATE, EXPIRE_DATE, TIMESTAMPS, MISCFLGS, MISC, ICON_CLS)
-values ('1901', '300号文文件上传', '/fpages/export/ftl/UploadfilesFor300.jsp', 2, 0, '19', 1, '1', '1', null, null, null, '1', null, null, null, null, null, null);
+values ('1901', 'Risk Rating上传', '/fpages/export/ftl/UploadfilesFor300.jsp', 2, 0, '19', 1, '1', '1', null, null, null, '1', null, null, null, null, null, null);
 insert into FUNCTION_INFO (FUNCID, FUNCNAME, PAGEPATH, LOCATION, ISDIRECTORY, LASTDIRECTORY, SHOWSEQ, FUNC_CLASS, FUNC_TYPE, WORKFLOW_FLAG, UP_FUNC_CODE, FUNC_DESC, STATUS, EFFECT_DATE, EXPIRE_DATE, TIMESTAMPS, MISCFLGS, MISC, ICON_CLS)
-values ('1902', '300号文文件审核', '/fpages/export/ftl/CheckfilesFor300.ftl', 2, 0, '19', 2, '1', '1', null, null, null, '1', null, null, null, null, null, null);
+values ('1902', 'Risk Rating审核', '/fpages/export/ftl/CheckfilesFor300.ftl', 2, 0, '19', 2, '1', '1', null, null, null, '1', null, null, null, null, null, null);
 commit;
 
 --TB_TABLEINFO_300脚本
