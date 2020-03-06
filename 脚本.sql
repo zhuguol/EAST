@@ -93,7 +93,7 @@ insert into TB_TABLEINFO_300 (FILE_NAME, TABLE_NAME, COLUMN_NAME, DATA_TYPE, DAT
 values ('CUSTOMER_RISK_RATING_RBWM', 'CUSTOMER_RISK_RATING_RBWM', 'REVIEW_STATUS', null, null, null, null, 6, null, null, null, null);
 commit;
 
-comment on table import_file is '联网核查审核信息表';
+--comment on table import_file is '联网核查审核信息表';
 
 create table UPLOAD_FILE_300
 (
